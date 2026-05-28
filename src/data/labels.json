@@ -1,0 +1,72 @@
+[
+  {
+    "post_id": "p1",
+    "priority_label": "High",
+    "label_reason": "生活インフラの安全性に関わり、誤情報だと不安拡大が起きやすい。"
+  },
+  {
+    "post_id": "p2",
+    "priority_label": "High",
+    "label_reason": "交通行動を直接変えうるため、即時確認の必要が高い。"
+  },
+  {
+    "post_id": "p3",
+    "priority_label": "Mid",
+    "label_reason": "名誉毀損の懸念はあるが、直ちに安全行動へ結びつきにくい。"
+  },
+  {
+    "post_id": "p4",
+    "priority_label": "Low",
+    "label_reason": "販促情報の真偽は重要度が比較的低い。"
+  },
+  {
+    "post_id": "p5",
+    "priority_label": "High",
+    "label_reason": "健康被害や受診回避につながる可能性がある。"
+  },
+  {
+    "post_id": "p6",
+    "priority_label": "High",
+    "label_reason": "保護者や学校の行動に直結し、混乱を招きやすい。"
+  },
+  {
+    "post_id": "p7",
+    "priority_label": "Mid",
+    "label_reason": "誤った対処法の拡散は危険だが即時性は中程度。"
+  },
+  {
+    "post_id": "p8",
+    "priority_label": "High",
+    "label_reason": "公式情報を避けさせる内容で、避難判断を誤らせるおそれがある。"
+  },
+  {
+    "post_id": "p9",
+    "priority_label": "High",
+    "label_reason": "医療行動を誤らせるため、優先度が高い。"
+  },
+  {
+    "post_id": "p10",
+    "priority_label": "Mid",
+    "label_reason": "買い占めを誘発しやすいが、直接の安全リスクは相対的に低い。"
+  },
+  {
+    "post_id": "p11",
+    "priority_label": "High",
+    "label_reason": "防災情報の信頼を崩し、避難判断を誤らせる危険が高い。"
+  },
+  {
+    "post_id": "p12",
+    "priority_label": "High",
+    "label_reason": "救急要請を控えさせる内容で、健康被害に直結しうる。"
+  },
+  {
+    "post_id": "p13",
+    "priority_label": "Low",
+    "label_reason": "誤情報ではあるが、深刻な行動変化に直結しにくい。"
+  },
+  {
+    "post_id": "p14",
+    "priority_label": "Mid",
+    "label_reason": "生活行動に影響はあるが、公的確認手段が比較的取りやすい。"
+  }
+]

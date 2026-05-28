@@ -1,0 +1,72 @@
+[
+  {
+    "set_id": "set_a",
+    "post_id": "p6",
+    "priority_score": 0.98,
+    "priority_rank": 1,
+    "rationale_short": "児童の安全に関する内容で、保護者の即時行動に直結しやすい。"
+  },
+  {
+    "set_id": "set_a",
+    "post_id": "p8",
+    "priority_score": 0.94,
+    "priority_rank": 2,
+    "rationale_short": "公式情報から離脱させ、避難判断を誤らせる危険が大きい。"
+  },
+  {
+    "set_id": "set_a",
+    "post_id": "p1",
+    "priority_score": 0.9,
+    "priority_rank": 3,
+    "rationale_short": "給水所の安全性に触れ、不安拡散と行動変化の影響が大きい。"
+  },
+  {
+    "set_id": "set_a",
+    "post_id": "p2",
+    "priority_score": 0.82,
+    "priority_rank": 4,
+    "rationale_short": "交通行動に影響するが、確認手段が比較的多く補正しやすい。"
+  },
+  {
+    "set_id": "set_a",
+    "post_id": "p4",
+    "priority_score": 0.17,
+    "priority_rank": 5,
+    "rationale_short": "販促情報であり、社会的な危険度は比較的低い。"
+  },
+  {
+    "set_id": "set_b",
+    "post_id": "p12",
+    "priority_score": 0.99,
+    "priority_rank": 1,
+    "rationale_short": "救急要請を控えさせかねず、健康被害へ直結する危険が高い。"
+  },
+  {
+    "set_id": "set_b",
+    "post_id": "p5",
+    "priority_score": 0.96,
+    "priority_rank": 2,
+    "rationale_short": "健康判断を誤らせ、受診回避や不信を招きやすい。"
+  },
+  {
+    "set_id": "set_b",
+    "post_id": "p11",
+    "priority_score": 0.93,
+    "priority_rank": 3,
+    "rationale_short": "防災無線の信頼を崩し、避難行動を誤らせる危険が高い。"
+  },
+  {
+    "set_id": "set_b",
+    "post_id": "p9",
+    "priority_score": 0.88,
+    "priority_rank": 4,
+    "rationale_short": "民間療法の断定で、適切な治療の遅れにつながるおそれがある。"
+  },
+  {
+    "set_id": "set_b",
+    "post_id": "p14",
+    "priority_score": 0.61,
+    "priority_rank": 5,
+    "rationale_short": "生活行動を変えやすいが、公的確認で補正しやすい内容でもある。"
+  }
+]
