@@ -75,30 +75,12 @@ export function ResultClient() {
   }
 
   const posts: PostRecord[] = payload.session.posts;
+  const memoReasons = payload.optionalFeedback
+    ? payload.optionalFeedback.split("、").map((item) => item.trim()).filter(Boolean)
+    : [];
 
   return (
     <section className="stack">
-      <div className="hero">
-        <div className="summary-grid">
-          <div className="summary-card">
-            <div className="muted">体験者の選択数</div>
-            <div style={{ fontSize: "2rem", fontWeight: 800 }}>
-              {payload.chosenPostIds.length}
-            </div>
-          </div>
-          <div className="summary-card">
-            <div className="muted">所要時間</div>
-            <div style={{ fontSize: "2rem", fontWeight: 800 }}>
-              {(payload.durationMs / 1000).toFixed(1)}秒
-            </div>
-          </div>
-          <div className="summary-card">
-            <div className="muted">判定モード</div>
-            <div style={{ fontSize: "2rem", fontWeight: 800 }}>{payload.judgeMode}</div>
-          </div>
-        </div>
-      </div>
-
       <ComparisonTable
         posts={posts}
         labels={payload.labels}
@@ -106,10 +88,16 @@ export function ResultClient() {
         chosenPostIds={payload.chosenPostIds}
       />
 
-      {payload.optionalFeedback ? (
+      {memoReasons.length > 0 ? (
         <div className="panel stack">
-          <div style={{ fontWeight: 700 }}>任意コメント</div>
-          <div className="muted">{payload.optionalFeedback}</div>
+          <div style={{ fontWeight: 700 }}>何を重視して選択しましたか（任意）</div>
+          <div className="post-meta">
+            {memoReasons.map((reason) => (
+              <span key={reason} className="pill">
+                {reason}
+              </span>
+            ))}
+          </div>
         </div>
       ) : null}
 

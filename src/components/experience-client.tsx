@@ -7,6 +7,14 @@ import { PostCard } from "@/components/post-card";
 import { CURRENT_SESSION_KEY, RESULT_KEY } from "@/lib/storage";
 import type { LabelRecord, PostRecord, SessionBundle } from "@/lib/types";
 
+const judgmentMemoOptions = [
+  "分断・対立の促進",
+  "行動扇動",
+  "もっともらしさ",
+  "拡散しやすさ",
+  "悪用されやすさ"
+] as const;
+
 type ResultPayload = {
   session: SessionBundle;
   chosenPostIds: string[];
@@ -28,7 +36,7 @@ export function ExperienceClient() {
   const router = useRouter();
   const [session, setSession] = useState<SessionBundle | null>(null);
   const [selectedPostIds, setSelectedPostIds] = useState<string[]>([]);
-  const [feedback, setFeedback] = useState("");
+  const [memoReasons, setMemoReasons] = useState<string[]>([]);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -59,6 +67,12 @@ export function ExperienceClient() {
     });
   }
 
+  function toggleMemoReason(reason: string) {
+    setMemoReasons((previous) =>
+      previous.includes(reason) ? previous.filter((item) => item !== reason) : [...previous, reason]
+    );
+  }
+
   async function submitAnswer() {
     if (!session || selectedPostIds.length === 0) {
       return;
@@ -68,6 +82,7 @@ export function ExperienceClient() {
     setError(null);
 
     const submittedAt = new Date().toISOString();
+    const optionalFeedback = memoReasons.length > 0 ? memoReasons.join("、") : undefined;
 
     try {
       const answerResponse = await fetch("/api/answer", {
@@ -81,7 +96,7 @@ export function ExperienceClient() {
           chosen_post_ids: selectedPostIds,
           started_at: session.started_at,
           submitted_at: submittedAt,
-          optional_feedback: feedback
+          optional_feedback: optionalFeedback
         })
       });
 
@@ -114,7 +129,7 @@ export function ExperienceClient() {
         labels: session.labels,
         judgeMode: judgeData.mode,
         judgeResults: judgeData.results,
-        optionalFeedback: feedback || undefined,
+        optionalFeedback,
         submittedAt,
         durationMs: answerData.duration_ms
       };
@@ -167,17 +182,31 @@ export function ExperienceClient() {
                   ? `${selectedPostIds.length}件 / 1件を選択`
                   : `${orderedPosts.length}件中 ${selectedPostIds.length}件を選択中`}
               </div>
-              <label className="stack">
-                <span style={{ fontWeight: 700 }}>判断メモ（任意）</span>
-                <textarea
-                  className="textarea"
-                  rows={5}
-                  maxLength={240}
-                  value={feedback}
-                  onChange={(event) => setFeedback(event.target.value)}
-                  placeholder="どの点が危険だと思ったか、何を根拠に選んだか"
-                />
-              </label>
+              <fieldset className="memo-group">
+                <legend className="memo-group__legend">何を重視して選択しましたか（任意）</legend>
+                <div className="memo-choice-list">
+                  {judgmentMemoOptions.map((option) => {
+                    const selected = memoReasons.includes(option);
+
+                    return (
+                      <label
+                        key={option}
+                        className={`memo-choice${selected ? " is-selected" : ""}`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={selected}
+                          onChange={() => toggleMemoReason(option)}
+                        />
+                        <span className="memo-choice__text">{option}</span>
+                      </label>
+                    );
+                  })}
+                </div>
+                <div className="muted" style={{ fontSize: "0.92rem" }}>
+                  当てはまる理由をすべて選んでください。
+                </div>
+              </fieldset>
               <button
                 type="button"
                 className="button"

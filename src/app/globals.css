@@ -642,6 +642,59 @@ textarea {
 }
 
 
+.memo-group {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.memo-group__legend {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+.memo-choice-list {
+  display: grid;
+  gap: 10px;
+}
+
+.memo-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(25, 29, 26, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background 140ms ease;
+}
+
+.memo-choice:hover {
+  transform: translateY(-1px);
+}
+
+.memo-choice.is-selected {
+  border-color: rgba(12, 108, 112, 0.38);
+  background: rgba(12, 108, 112, 0.08);
+}
+
+.memo-choice input {
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+.memo-choice__text {
+  line-height: 1.45;
+}
+
+
 @media (min-width: 1024px) {
   .page-shell {
     width: min(1920px, calc(100% - 32px));

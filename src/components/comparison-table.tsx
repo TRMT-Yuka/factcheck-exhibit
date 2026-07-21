@@ -44,22 +44,10 @@ export function ComparisonTable({
             return (
               <tr key={post.post_id}>
                 <td style={{ minWidth: 280 }}>
-                  <div style={{ fontWeight: 700, marginBottom: 8 }}>{post.platform ?? "投稿"}</div>
                   <div style={{ lineHeight: 1.6 }}>{post.text}</div>
                 </td>
-                <td>{selected ? "選択した" : "選択していない"}</td>
-                <td style={{ minWidth: 230 }}>
-                  {judge ? (
-                    <div className="stack">
-                      <div>
-                        順位 {judge.priority_rank} / スコア {judge.priority_score.toFixed(2)}
-                      </div>
-                      <div className="muted">{judge.rationale_short}</div>
-                    </div>
-                  ) : (
-                    <span className="muted">判定なし</span>
-                  )}
-                </td>
+                <td style={{ width: 120, textAlign: "center" }}>{selected ? "✓" : ""}</td>
+                <td style={{ minWidth: 180, textAlign: "center" }}>{judge?.priority_rank === 1 ? "要チェック" : ""}</td>
                 <td style={{ minWidth: 200 }}>
                   {label ? (
                     <div className="stack">
