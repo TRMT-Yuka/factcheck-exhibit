@@ -6,7 +6,5 @@ data/factcheck/
 # data/*.sqlite
 # data/*.sqlite-*
 npm-debug.log*
-public/avatars/*
-!public/avatars/.gitkeep
 data/*.sqlite
 data/*.sqlite-*

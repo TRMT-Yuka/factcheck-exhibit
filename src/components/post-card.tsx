@@ -62,20 +62,20 @@ function getPlatformTheme(platform?: string | null) {
 
 function getPersona(postId: string) {
   const personas = [
-    { name: "さとう みなみ", handle: "@37minami", avatar: "/avatars/avatar-01.png" },
-    { name: "海沿いのゆう", handle: "@umi_yuu12", avatar: "/avatars/avatar-02.jpg" },
-    { name: "kento", handle: "@kentogram", avatar: "/avatars/avatar-03.jpg" },
-    { name: "nana_photo", handle: "@nanalog_23", avatar: "/avatars/avatar-04.jpg" },
-    { name: "まつだ あおい", handle: "@aoi_note", avatar: "/avatars/avatar-05.jpg" },
-    { name: "たける父", handle: "@tk_home", avatar: "/avatars/avatar-06.jpg" },
-    { name: "nori暮らしメモ", handle: "@nori_life", avatar: "/avatars/avatar-07.jpg" },
-    { name: "ゆき防災メモ", handle: "@yuki_days", avatar: "/avatars/avatar-08.png" },
-    { name: "りこ", handle: "@rico_clip", avatar: "/avatars/avatar-09.jpg" },
-    { name: "mika", handle: "@mika_stories", avatar: "/avatars/avatar-01.png" },
-    { name: "daichi", handle: "@dd_run", avatar: "/avatars/avatar-02.jpg" },
-    { name: "haru_84", handle: "@haru84_", avatar: "/avatars/avatar-03.jpg" },
-    { name: "そらの部屋", handle: "@sora_room", avatar: "/avatars/avatar-04.jpg" },
-    { name: "ami", handle: "@ami_local", avatar: "/avatars/avatar-05.jpg" }
+    { name: "さとう みなみ", handle: "@37minami", avatar: "/avatars/sweets_maritozzo.png" },
+    { name: "海沿いのゆう", handle: "@umi_yuu12", avatar: "/avatars/AdobeStock_1869245565.jpeg" },
+    { name: "kento", handle: "@kentogram", avatar: "/avatars/pan_kame.png" },
+    { name: "nana_photo", handle: "@nanalog_23", avatar: "/avatars/avatar-04.png" },
+    { name: "まつだ あおい", handle: "@aoi_note", avatar: "/avatars/AdobeStock_1890042380.jpeg" },
+    { name: "たける父", handle: "@tk_home", avatar: "/avatars/avatar-06.png" },
+    { name: "nori暮らしメモ", handle: "@nori_life", avatar: "/avatars/AdobeStock_1900561464.jpeg" },
+    { name: "ゆき防災メモ", handle: "@yuki_days", avatar: "/avatars/halloween_obake_kasou.png" },
+    { name: "りこ", handle: "@rico_clip", avatar: "/avatars/avatar-09.png" },
+    { name: "mika", handle: "@mika_stories", avatar: "/avatars/sweets_maritozzo.png" },
+    { name: "daichi", handle: "@dd_run", avatar: "/avatars/AdobeStock_1869245565.jpeg" },
+    { name: "haru_84", handle: "@haru84_", avatar: "/avatars/pan_kame.png" },
+    { name: "そらの部屋", handle: "@sora_room", avatar: "/avatars/avatar-04.png" },
+    { name: "ami", handle: "@ami_local", avatar: "/avatars/AdobeStock_1890042380.jpeg" }
   ];
 
   const numericId = Number(postId.replace("p", ""));
